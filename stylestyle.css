@@ -1,0 +1,45 @@
+.container-of-header{
+   width: 100%;
+   height:70vh;
+   
+     background: linear-gradient(to top , #003366, #000033);
+ 
+  color: #fff;
+}
+header>.icon{
+   margin-left: 4rem;
+   padding: 0 2rem;
+   cursor: pointer;
+   padding: 1rem;
+}.with{
+margin-right: 3rem;
+}
+.with>button{
+   background: transparent;
+   color: #fff;
+   outline: none;
+   border: none;
+padding: 1rem;
+transition: 0.5s background ease;
+}
+.with>button:hover{
+   background:#fff;
+   color: red;
+}.input-container{
+   margin-top: 8rem;
+   padding: 1.4rem 0;
+}
+
+.input{
+max-width: 550px;
+min-width: 450px;
+   height: 50px;
+   background: #ffff;
+   padding: 0 1rem;
+   font-size: 1.4rem;
+}
+.input>input{
+   outline: none;
+   border: none;
+   background:transparent;
+}
