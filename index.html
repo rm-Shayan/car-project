@@ -29,30 +29,420 @@
         <img alt="Pakwheels logo white" title="Buy &amp; Sell Cars, Bikes &amp; Autoparts - Find Car Prices, News &amp; Reviews " src="https://wsa1.pakwheels.com/assets/new-pw-logo-white-c4cd16ae34613cc1fa16d7840f34a71e.svg" width="300px" style=" margin-top: 2rem;" >
       </div>
    
-<div class="nav-container d-flex justify-content-lg-start">
-<div class="dropdown-1">
-  <select  class=" bg-transparent text-white light" id="brand" onchange="carsOfSpecificBrand()">
+<div class="nav-containers   d-flex  justify-content-end justify-content-sm-end justify-content-md-end justify-content-lg-evenly ">
+<div class="dropdown-1  d-none d-lg-block d-md-none d-sm-none ">
+  <select  class=" " id="brand" onchange=" populateModels(event)">
 
   </select>
   
 </div>
-<div class="dropdown-2" >
-  <select  id="newCar"></select>
+<div class="dropdown-2 d-none d-lg-block d-md-none d-sm-none" >
+  <select class=""  id="model"></select>
+</div>
+
+<div class="nav-button d-none d-lg-block d-md-none d-sm-none">
+  <button class="btn btn-outline-light btn-lg fs-4 ">About us</button>
+</div>
+<div class="nav-button d-none d-lg-block d-md-none d-sm-none">
+ <button class="btn btn-outline-light btn-lg fs-4 ">forum</button>
+
+</div>
+<div class="nav-button d-none d-lg-block d-md-none d-sm-none">
+  <button class="btn btn-outline-light btn-lg fs-4 ">contact us</button>
+
+</div>
+<div class="menu-toggle d-lg-none">
+<button><i class="fa fa-bars" aria-hidden="true"></i></button>
+
+</div>
+<div class="menu-list d-lg-none" style="display: none;">
+  
+  <div class="nav-button ">
+    <button class="btn btn-danger w-100 btn-lg fs-4 ">About us</button>
+  </div>
+  <div class="nav-button">
+    <button class="btn btn-light w-100 btn-lg fs-4 ">forum</button>
+  
+  </div>
+  <div class="nav-button ">
+    <button class="btn btn-danger w-100 btn-lg fs-4 ">contact us</button>
+  
+  </div>
 </div>
 
 </div>
 
-      <div class="input-container d-flex flex-column justify-content-center align-items-center my-4 py-4">
+
+
+      <div class="input-container  d-flex flex-column justify-content-center align-items-center my-4 py-4">
         <h1 class="white   fs-sm-4  fs-md-1  fs-lg-1">Find  Cars in Pakistan</h1>
         <h5 class="text-white fs-6 fs-sm-6  fs-md-3 fs-lg-3">With thousands of cars, we have just the right one for you</h5>
    <div class="input">
-    <input type="text" placeholder="Search for Car">
+    <input type="text" placeholder="Search for Car" id="search">
    </div>
       </div>
     
    
     </div>
   </div>
+
+
+
+  <div class="About-container" id="About-container">
+    <div class="row bg-light">
+     <div class="col-6">
+       <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis ">
+         <div class="col-lg-6 px-0">
+           <h1 id="aboutus" class="display-4  fw-bolder">About US</h1>
+           <p class="lead my-3">PakWheels.com is an online marketplace for buying and selling cars in Pakistan. It was founded in 2003 by Muhammad Hanif Bhatti and is based in Lahore. 
+            Early history
+            PakWheels started as a community for car enthusiasts to share their passion for cars 
+            In 2005, it became Pakistan's first online classified website for vehicles 
+            In 2007, Raza Saeed and Suneel Munj bought PakWheels from Bhatti 
+            Growth and success
+            PakWheels has become Pakistan's top automotive portal 
+            It has a forum for automotive discussions, a blog, and a review section for cars and bikes 
+            PakWheels has helped millions of Pakistanis buy and sell cars 
+            It has an 80% market share of the automobiles classified ads market 
+            It has created new revenue streams and hopes to provide a one-stop solution for automotive transactions 
+            Other activities 
+            PakWheels also hosts the PakWheels Auto Show, which raises funds for charities
+            The show has attracted many celebrities, government officials, and car enthusiasts
+            About Us - Pakwheels
+            Founded in 2003, PakWheels.com has become Pakistan's #1 automotive portal. Since its inception, PakWheels.com has helped millions ...
+            
+            Pakwheels
+            PakWheels - Wikipedia
+            PakWheels is a Pakistani online marketplace for car shoppers and sellers based in Lahore. It aggregates thousands of new, used, an...
+            
+            Wikipedia
+            </p>
+           <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+         </div>
+        
+       </div>
+     </div>
+     <div class="col-6 d-flex flex-column justify-content-center align-items-start">
+      <img src="OIP (1).jpeg" alt="" class="w-100">
+     </div>
+    </div>
+   </div>
+   
+  <div class="card-container" id="card-container">
+     
+    <div class=" row cards">
+      <h1 class="px-4 mx-4">CARS:</h1>
+
+
+      <!-- cards -->
+      <div class=" card col-6  ">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <button class="btn btn-danger btn-lg"> Add to cart</button>
+       
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       <img src="OIP (1).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class=" card col-6 ">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0"> </h3>
+        <div class="mb-1 text-body-secondary fw-bolder fs-3">Model <span class="brand"></span></div>
+        <p class="card-text mb-auto fs-4">Price: <span  class="price"></span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+         <button class="btn btn-danger btn-lg">Add to cart</button>
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+    <img src="OIP.jpeg" alt="">
+      </div>
+    </div>
+  </div>
+      <div class=" card col-6  ">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <button class="btn btn-danger btn-lg"> Add to cart</button>
+       
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       <img src="OIP (2).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class=" card col-6 ">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0"> </h3>
+        <div class="mb-1 text-body-secondary fw-bolder fs-3">Model <span class="brand"></span></div>
+        <p class="card-text mb-auto fs-4">Price: <span  class="price"></span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+         <button class="btn btn-danger btn-lg">Add to cart</button>
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+    <img src="OIP (3).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+      <div class=" card col-6  ">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <button class="btn btn-danger btn-lg"> Add to cart</button>
+       
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       <img src="OIP (4).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class=" card col-6 ">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0"> </h3>
+        <div class="mb-1 text-body-secondary fw-bolder fs-3">Model <span class="brand"></span></div>
+        <p class="card-text mb-auto fs-4">Price: <span  class="price"></span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+         <button class="btn btn-danger btn-lg">Add to cart</button>
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+    <img src="OIP (5).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+      <div class=" card col-6  ">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <button class="btn btn-danger btn-lg"> Add to cart</button>
+       
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       <img src="OIP (6).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class=" card col-6 ">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0"> </h3>
+        <div class="mb-1 text-body-secondary fw-bolder fs-3">Model <span class="brand"></span></div>
+        <p class="card-text mb-auto fs-4">Price: <span  class="price"></span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+         <button class="btn btn-danger btn-lg">Add to cart</button>
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+    <img src="OIP (7).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+      <div class=" card col-6  ">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <button class="btn btn-danger btn-lg"> Add to cart</button>
+       
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       <img src="OIP (8).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class=" card col-6 ">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0"> </h3>
+        <div class="mb-1 text-body-secondary fw-bolder fs-3">Model <span class="brand"></span></div>
+        <p class="card-text mb-auto fs-4">Price: <span  class="price"></span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+         <button class="btn btn-danger btn-lg">Add to cart</button>
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+    <img src="OIP (9).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+      <div class=" card col-6  ">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <button class="btn btn-danger btn-lg"> Add to cart</button>
+       
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       <img src="OIP (10).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class=" card col-6 ">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0"> </h3>
+        <div class="mb-1 text-body-secondary fw-bolder fs-3">Model <span class="brand"></span></div>
+        <p class="card-text mb-auto fs-4">Price: <span  class="price"></span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+         <button class="btn btn-danger btn-lg">Add to cart</button>
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+    <img src="OIP (11).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+      <div class=" card col-6  ">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <button class="btn btn-danger btn-lg"> Add to cart</button>
+       
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       <img src="OIP (12).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class=" card col-6 ">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0"> </h3>
+        <div class="mb-1 text-body-secondary fw-bolder fs-3">Model <span class="brand"></span></div>
+        <p class="card-text mb-auto fs-4">Price: <span  class="price"></span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+         <button class="btn btn-danger btn-lg">Add to cart</button>
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+    <img src="OIP (13).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+      <div class=" card col-6  ">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+        <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+        <div class="mb-1 text-body-secondary"></div>
+        <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+          <button class="btn btn-danger btn-lg"> Add to cart</button>
+       
+        </a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       <img src="OIP (14).jpeg" alt="">
+      </div>
+    </div>
+  </div>
+
+ 
+ 
+ 
+  
+  
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="specific-cards" style="display: none;">
+<div class="row">
+  <div class="col-6">
+    <div class=" card col-6  ">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+      <strong class="d-inline-block mb-2 text-primary-emphasis fs-4">Brand: <span class="brandName"></span></strong>
+      <h3 class="mb-0 mt-4">Model <span class="brand"></span></h3>
+      <div class="mb-1 text-body-secondary"></div>
+      <p class="card-text mb-auto fs-4" > Price: <span class="price"> </span></p>
+      <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+        <button class="btn btn-danger btn-lg"> Add to cart</button>
+     
+      </a>
+    </div>
+    <div class="col-auto d-none d-lg-block">
+     <img src="" alt="">
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+</div>
+
 
 
 

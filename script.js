@@ -1,135 +1,126 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
+
   let dropDownOfBrand = document.getElementById("brand");
+  let dropDownOfModel = document.getElementById("model");
+
   let car = {
-      tesla: {
-        model3: {
-          model: "Tesla Model 3",
-          price: "RS 350,000"
-        },
-        modelY: {
-          model: "Tesla Model Y",
-          price: "RS 450,000"
-        },
-        modelS: {
-          model: "Tesla Model S",
-          price: "RS 500,000"
-        },
-        cyberTruck: {
-          model: "Tesla Cybertruck",
-          price: "RS 600,000"
-        }
-      },
-      Rolls_Royce: {},
-      honda: {
-          civic: {
-              model: 'Civic 2024',
-              price: "Rs. 3,000,000"
-          },
-          city: {
-              model: 'City 2024',
-              price: "Rs. 2,500,000"
-          },
-          HondaBRV: {
-              model: 'Honda BRV 2024',
-              price: "Rs. 6,299,000"
-          },
-          HondaAccord: {
-              model: "Honda Accord 2024",
-              price: "Rs. 2.5cr"
-          }
-      },
-      BMW: {
-        i14: {
-          model: "BMW i14",
-          price: "Rs. 4.5cr"
-        },
-        Series2: {
-          model: "BMW 2 Series",
-          price: "RS 3.2cr"
-        },
-        i5: {
-          model: "BMW i5",
-          price: "RS 3.8cr"
-        }
-      },
-      hyundai: {
-        H_100: {
-          model: "Hyundai H100",
-          price: "RS 1.8cr"
-        },
-        tucson: {
-          model: "Hyundai Tucson",
-          price: "PKR 80.8 - 87.8 lac"
-        },
-        sonata: {
-          model: "Hyundai Sonata",
-          price: "PKR 99 lac - 1.59cr"
-        }
-      },
-      Audi: {
-        Q2: {
-          model: "Audi Q2",
-          price: "RS 72.5 lac"
-        },
-        Q8_e_tron: {
-          model: "Audi Q8 e-tron",
-          price: "Rs 5cr"
-        },
-        e_tron_GT: {
-          model: "Audi e-tron GT",
-          price: "Rs 7.5cr"
-        }
-      },
-      porsche: {
-        cayman: {
-          model: "Porsche Cayman 718",
-          price: "Rs. 8.5cr"
-        },
-        Boxter: {
-          model: "Porsche Boxster 718",
-          price: "RS 789,000"
-        },
-        cayman_s: {
-          model: "Porsche Cayman S",
-          price: "Rs. 9.5cr"
-        }
-      },
-      suzuki: {
-          swift: {
-              model: 'Swift 2024',
-              price: "Rs. 4,256,000"
-          },
-          alto: {
-              model: "Alto 2024",
-              price: "Rs. 2,251,000"
-          },
-          Baleno: {
-              model: 'Baleno 2024',
-              price: "Rs. 1.2 lac"
-          },
-          cultus: {
-              model: "Cultus",
-              price: "Rs. 3,718,000"
-          }
-      },
-      toyota: {
-          yaris: {
-              model: "Yaris",
-              price: "Rs. 4,899,000"
-          }
-      }
+    tesla: {
+      model3: { model: "Tesla Model 3", price: "RS 350,000", img: "modelx_76 (1).avif" },
+      modelY: { model: "Tesla Model Y", price: "RS 450,000", img: "tesla-model-y-13.avif" },
+      modelS: { model: "Tesla Model S", price: "RS 500,000", img: "tesla-model-s-7.avif" },
+      cyberTruck: { model: "Tesla Cybertruck", price: "RS 600,000", img: "cybertruck-image-official.avif" }
+    },
+    Rolls_Royce: {
+      phantom: { model: "Rolls Royce Phantom", price: "RS 1.5B", img: "R (7).jpeg" }
+    },
+    honda: {
+      civic: { model: 'Civic 2024', price: "Rs. 3,000,000", img: "OIP (13).jpeg" },
+      city: { model: 'City 2024', price: "Rs. 2,500,000", img: "R (5).jpeg" },
+      HondaBRV: { model: 'Honda BRV 2024', price: "Rs. 6,299,000", img: "R (6).jpeg" },
+      HondaAccord: { model: "Honda Accord 2024", price: "Rs. 2.5cr", img: "OIP (14).jpeg" }
+    }
   };
 
+ 
   dropDownOfBrand.innerHTML = "<option>Select Brand</option>";
-
-  dropDownOfBrand.addEventListener("click", function() {
-      dropDownOfBrand.innerHTML = "<option>Select Brand</option>";
-      for (let key in car) {
-          dropDownOfBrand.innerHTML += "<option>" + key + "</option>";
+  for (let key in car) {
+    dropDownOfBrand.innerHTML += `<option value="${key}">${key}</option>`;
+  }
+  dropDownOfModel.innerHTML = "<option>Select Model</option>"; 
+  function populateModels(event) {
+    let selectedBrand = event.target.value;
+  
+    if (car[selectedBrand]) {
+      for (let key in car[selectedBrand]) {
+        dropDownOfModel.innerHTML += `<option value="${key}">${car[selectedBrand][key].model}</option>`;
       }
-  });
+    }
+  }
 
  
+  dropDownOfBrand.addEventListener("change", populateModels);
+
+  // Menu Toggle Logic (No Changes)
+  let toggle = document.querySelectorAll(".menu-toggle");
+
+  toggle.forEach(button => {
+    button.addEventListener("click", function () {
+      let toggleList = document.querySelectorAll(".menu-list");
+
+      toggleList.forEach(menu => {
+        let currentDisplay = window.getComputedStyle(menu).display;
+
+        if (currentDisplay === "block") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "block";
+        }
+      });
+    });
   });
 
+
+
+
+
+
+
+
+});
+
+addEventListener("DOMContentLoaded",function(){
+
+
+
+  let car = {
+    tesla: {
+      model3: { model: "Tesla Model 3", price: "RS 350,000", img: "modelx_76 (1).avif" },
+      modelY: { model: "Tesla Model Y", price: "RS 450,000", img: "tesla-model-y-13.avif" },
+      modelS: { model: "Tesla Model S", price: "RS 500,000", img: "tesla-model-s-7.avif" },
+      cyberTruck: { model: "Tesla Cybertruck", price: "RS 600,000", img: "cybertruck-image-official.avif" }
+    },
+    rolls_royce: {
+      phantom: { model: "Rolls Royce Phantom", price: "RS 1.5B", img: "R (7).jpeg" }
+    },
+    honda: {
+      civic: { model: 'Civic 2024', price: "Rs. 3,000,000", img: "OIP (13).jpeg" },
+      city: { model: 'City 2024', price: "Rs. 2,500,000", img: "R (5).jpeg" },
+      brv: { model: 'Honda BRV 2024', price: "Rs. 6,299,000", img: "R (6).jpeg" },
+      accord: { model: "Honda Accord 2024", price: "Rs. 2.5cr", img: "OIP (14).jpeg" }
+    }
+  };
+
+
+  let searchCar = document.getElementById("search");
+let aboutUI=document.getElementById("About-container");
+let cardContainerUI=document.getElementById("card-container");
+
+  searchCar.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      console.log(searchCar.value)
+      let searchVal=searchCar.value.toLowerCase();
+      
+ if(car[searchVal]){
+  aboutUI.style.display="none";
+  cardContainerUI.style.display="none";
+ let valSearch=car[searchVal]
+for( let key in valSearch){
+
+  console.log(key)
+ console.log(key.key)
   
+ 
+ 
+} 
+
+
+}else{
+  alert(`car not found`)
+}
+
+     
+  
+     
+    }
+  });
+})
