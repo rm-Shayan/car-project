@@ -136,7 +136,15 @@ transform: scale3d(-1,1,1);
 .div:hover{
 transform: scale3d(-1,1,1);
 }
-
+.img-container{
+   cursor: pointer;
+}select>option {
+   background-color: #003366;
+}
+select>option:hover{
+   color: #fff;
+   
+}
  @media only screen and (max-width:616px) {
    input{
 width: 100px;
@@ -148,6 +156,8 @@ width: 100px;
    }.for{
       background: #Fff;
     
+   }.menu-toggle{
+      display: none;
    }
    
  }@media only screen and (max-width:450px) {
